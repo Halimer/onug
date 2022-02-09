@@ -13,6 +13,7 @@
 						"entityType"	:	"string"
 					},	
 					"event.name" : {
+						"__comment__" 		:	"May want to allow for name to be a fixed value like Public Bucket without requiring any path value",
 						"path"			:	"data.additionalDetails.problemName",
 						"entityType"	:	"string"
 					},
