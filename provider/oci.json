@@ -23,7 +23,7 @@
 					},
 					"event.startTime" : {
 						"path"			:	"data.additionalDetails.firstDetected",
-						"entityType"	:	"event.datetime"				
+						"entityType"	:	"datetime"				
 					},
 					"resource.severity" : {
 						"path"			:	"data.additionalDetails.riskLevel",
