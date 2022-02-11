@@ -25,7 +25,7 @@
 							"path"			:	"data.additionalDetails.firstDetected",
 							"entityType"	:	"datetime"				
 						},
-						"resource.severity" : {
+						"event.severity" : {
 							"path"			:	"data.additionalDetails.riskLevel",
 							"entityType"	:	"severity"
 						},
