@@ -1,5 +1,5 @@
 {
-    "provider" : "Oracle CLoud Infrastructure",
+    "provider" : "Oracle Cloud Infrastructure",
     "providerId" : "1",
     "providerType" : "CSP",
     "source" : {
