@@ -1,101 +1,133 @@
 {
-    "provider" : "Oracle CLoud Infrastructure",
-    "providerId" : "1",
-    "providerType" : "CSP",
-    "source" : {
-        "sourceName" : "OCI Cloud Guard",
-        "sourceId" : "0.9",
-        "alerts" : {
-				"alertId" : "__default__", { 
-                	"alertMapping" : {
-                    		"event.guid" : {
-							"path"			:	"data.resourceId",
-							"entityType"		:	"string"
-						},	
-						"event.name" : {
-							"__comment__" 		:	"May want to allow for name to be a fixed value like Public Bucket without requiring any path value",
-							"path"			:	"data.additionalDetails.problemName",
-							"entityType"		:	"string"
-						},
-						"event.shortDescription" : {
-							"path"			:	"data.additionalDetails.problemDescription",
-							"entityType"	:	"string"	
-						},
-						"event.startTime" : {
-							"path"			:	"data.additionalDetails.firstDetected",
-							"entityType"	:	"datetime"				
-						},
-						"resource.severity" : {
-							"path"			:	"data.additionalDetails.riskLevel",
-							"entityType"	:	"severity"
-						},
-						"resource.identifier" : {
-							"path"			:	"data.additionalDetails.resourceId",
-							"entityType"	:	"ociResourceId"
-						},
-						"resource.type" : {
-							"path"			:	"data.additionalDetails.resourceType",
-							"entityType"	:	"string"
-						},
-						"resource.name" : {
-							"path"			:	"data.additionalDetails.resourceName",
-							"entityType"	:	"string"
-						},
-						"resource.region" : {
-							"path"			:	"data.additionalDetails.region",
-							"entityType"	:	"string"
-						},
-						"resource.zone" : {
-							"path"			:	"data.compartmentName",
-							"entityType"	:	"string"
-						}
-					},
-				},
-				"alertId" : "BUCKET_IS_PUBLIC", { 
-                	"alertMapping" : {
-                    	"event.guid" : {
-							"path"			:	"data.resourceId",
-							"entityType"	:	"string"
-						},	
-						"event.name" : {
-							"__comment__" 		:	"May want to allow for name to be a fixed value like Public Bucket without requiring any path value",
-							"path"			:	"data.additionalDetails.problemName",
-							"entityType"	:	"string"
-						},
-						"event.shortDescription" : {
-							"path"			:	"data.additionalDetails.problemDescription",
-							"entityType"	:	"string"	
-						},
-						"event.startTime" : {
-							"path"			:	"data.additionalDetails.firstDetected",
-							"entityType"	:	"datetime"				
-						},
-						"resource.severity" : {
-							"path"			:	"data.additionalDetails.riskLevel",
-							"entityType"	:	"severity"
-						},
-						"resource.identifier" : {
-							"path"			:	"data.additionalDetails.resourceId",
-							"entityType"	:	"ociResourceId"
-						},
-						"resource.type" : {
-							"path"			:	"data.additionalDetails.resourceType",
-							"entityType"	:	"string"
-						},
-						"resource.name" : {
-							"path"			:	"data.additionalDetails.resourceName",
-							"entityType"	:	"string"
-						},
-						"resource.region" : {
-							"path"			:	"data.additionalDetails.region",
-							"entityType"	:	"string"
-						},
-						"resource.zone" : {
-							"path"			:	"data.compartmentName",
-							"entityType"	:	"string"
-						}
-        	        		}
-        			}
-	    	}
-	}
+    "provider": "Oracle CLoud Infrastructure",
+    "providerId": "1",
+    "providerType": "CSP",
+    "source": {
+        "OCI Cloud Guard" : {
+        "sourceName" : "OCI Cloud Guard"            ,
+        "sourceId": "0.9",
+        "alerts": {
+                "__default__" : 
+                {"alertMapping": 
+                        {
+                        "event.guid": {
+                            "path": "data.resourceId",
+                            "MappedValue" : true,
+                            "entityType": "string"
+                        },
+                        "event.name": {
+                            "__comment__": "May want to allow for name to be a fixed value like Public Bucket without requiring any path value",
+                            "MappedValue" : false,
+                            "path": "data.additionalDetails.problemName",
+                            "entityType": "string"
+                        },
+                        "event.shortDescription": {
+                            "path": "data.additionalDetails.problemDescription",
+                            "MappedValue" : true,
+                            "entityType": "string"
+                        },
+                        "event.startTime": {
+                            "path": "data.additionalDetails.firstDetected",
+                            "MappedValue" : true,
+                            "entityType": "datetime"
+                        },
+                        "resource.severity": {
+                            "path": "data.additionalDetails.riskLevel",
+                            "MappedValue" : true,
+                            "entityType": "severity"
+                        },
+                        "resource.identifier": {
+                            "path": "data.additionalDetails.resourceId",
+                            "MappedValue" : true,
+                            "entityType": "ociResourceId"
+                        },
+                        "resource.type": {
+                            "path": "data.additionalDetails.resourceType",
+                            "MappedValue" : true,
+                            "entityType": "string"
+                        },
+                        "resource.name": {
+                            "path": "data.additionalDetails.resourceName",
+                            "MappedValue" : true,
+                            "entityType": "string"
+                        },
+                        "resource.region": {
+                            "path": "data.additionalDetails.region",
+                            "MappedValue" : true,
+                            "entityType": "string"
+                        },
+                        "resource.zone": {
+                            "path": "data.compartmentName",
+                            "MappedValue" : true,
+                            "entityType": "string"
+                        }
+                    }
+                },
+             "BUCKET_IS_PUBLIC" :
+                 {"alertMapping": 
+                        {
+                        "event.guid": {
+                            "path": "data.resourceId",
+                            "MappedValue" : true,
+                            "entityType": "string"
+                        },
+                        "event.provider.name": {
+                            "__comment__": "May want to allow for name to be a fixed value like Public Bucket without requiring any path value",
+                            "path": "data.additionalDetails.problemName",
+                            "MappedValue" : false,
+                            "value" : "OCI Cloud Guard",
+                            "entityType": "string"
+                        },
+                        "event.name": {
+                            "__comment__": "May want to allow for name to be a fixed value like Public Bucket without requiring any path value",
+                            "path": "data.additionalDetails.problemName",
+                            "MappedValue" : false,
+                            "value" : "Public Bucket",
+                            "entityType": "string"
+                        },
+                        "event.shortDescription": {
+                            "path": "data.additionalDetails.problemDescription",
+                            "MappedValue" : true,
+                            "entityType": "string"
+                        },
+                        "event.startTime": {
+                            "path": "data.additionalDetails.firstDetected",
+                            "MappedValue" : true,
+                            "entityType": "datetime"
+                        },
+                        "resource.severity": {
+                            "path": "data.additionalDetails.riskLevel",
+                            "MappedValue" : true,
+                            "entityType": "severity"
+                        },
+                        "resource.identifier": {
+                            "path": "data.additionalDetails.resourceId",
+                            "MappedValue" : true,
+                            "entityType": "ociResourceId"
+                        },
+                        "resource.type": {
+                            "path": "data.additionalDetails.resourceType",
+                            "MappedValue" : true,
+                            "entityType": "string"
+                        },
+                        "resource.name": {
+                            "path": "data.additionalDetails.resourceName",
+                            "MappedValue" : true,
+                            "entityType": "string"
+                        },
+                        "resource.region": {
+                            "path": "data.additionalDetails.region",
+                            "MappedValue" : true,
+                            "entityType": "string"
+                        },
+                        "resource.zone": {
+                            "path": "data.compartmentName",
+                            "MappedValue" : true,
+                            "entityType": "string"
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
