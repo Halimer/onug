@@ -130,5 +130,8 @@ dmypy.json
 
 # Excel and CSV
 .csv
-.xlsx
-.docx
+*.xlsx
+*.docx
+
+# Ignore Mac Files
+*.DS_Store
