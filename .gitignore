@@ -135,3 +135,6 @@ dmypy.json
 
 # Ignore Mac Files
 *.DS_Store
+
+# Ignore Word Docx
+.docx

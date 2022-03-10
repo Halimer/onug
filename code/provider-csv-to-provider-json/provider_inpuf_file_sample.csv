@@ -1,0 +1,39 @@
+Provider,Provider Type,Provider ID,Source,alertId,CSNF Dictionary,path,staticValue,entityType
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,__default__,provider.accountId,data.additionalDetails.tenantId,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,__default__,event.guid,data.resourceId,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,__default__,event.name,data.additionalDetails.problemName,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,__default__,event.shortDescription,data.additionalDetails.problemDescription,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,__default__,event.startTime,data.additionalDetails.firstDetected,,datetime
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,__default__,event.severity,data.additionalDetails.riskLevel,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,__default__,event.status,data.additionalDetails.status,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,__default__,resource.identifier,data.additionalDetails.resourceId,,orclResourceId
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,__default__,resource.type,data.additionalDetails.resourceType,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,__default__,resource.name,data.additionalDetails.resourceName,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,__default__,resource.region,data.additionalDetails.region,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,__default__,resource.zone,data.compartmentName,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,provider.accountId,data.additionalDetails.tenantId,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,event.guid,data.resourceId,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,event.name,,Public Bucket,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,event.shortDescription,data.additionalDetails.problemDescription,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,event.startTime,data.additionalDetails.firstDetected,,datetime
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,event.severity,data.additionalDetails.riskLevel,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,event.status,data.additionalDetails.status,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,resource.identifier,data.additionalDetails.resourceId,,orclResourceId
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,resource.type,data.additionalDetails.resourceType,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,resource.name,data.additionalDetails.resourceName,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,resource.region,data.additionalDetails.region,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,resource.zone,data.compartmentName,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,event.recommendation,data.additionalDetails.problemRecommendation,,string
+Azure,CSP,2,Defender,Suspicious management session,provider.accountId,SubscriptionId,,string
+Azure,CSP,2,Defender,Suspicious management session,event.guid,AlertId,,string
+Azure,CSP,2,Defender,Suspicious management session,event.name,eventName,,string
+Azure,CSP,2,Defender,Suspicious management session,event.shortDescription,shortDescription,,string
+Azure,CSP,2,Defender,Suspicious management session,event.longDescription,longDescription,,string
+Azure,CSP,2,Defender,Suspicious management session,event.startTime,alertCreatedDateTime,,string
+Azure,CSP,2,Defender,Suspicious management session,event.severity,severity,,string
+Azure,CSP,2,Defender,Suspicious management session,event.status,status,,string
+Azure,CSP,2,Defender,Suspicious management session,resource.identifier,alertId,,string
+Azure,CSP,2,Defender,Suspicious management session,resource.type,principalType,,string
+Azure,CSP,2,Defender,Suspicious management session,resource.name,principalName,,string
+Azure,CSP,2,Defender,Suspicious management session,resource.region,identityAddress,,string
+Azure,CSP,2,Defender,Suspicious management session,resource.uri,principalUri,,string

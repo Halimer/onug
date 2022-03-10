@@ -1,4 +1,4 @@
-# ONUG Cake Demo
+# ONUG OCI Demo
 
 ## How to use
 
