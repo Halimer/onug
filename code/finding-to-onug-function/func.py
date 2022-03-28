@@ -83,7 +83,7 @@ def handler(ctx, data: io.BytesIO = None):
             except (Exception) as ex:
                 raise Exception("Handler: Failed to write event to log: " + str(ex))
             return response.Response(
-                ctx, response_data=json.dumps( {"message": "Wrote Event to Log" }), 
+                ctx, response_data=json.dumps(my_onug.get_finding()), 
                 headers={"Content-Type": "application/json"})
         else:
             LOGGER.info("Handler: returning mapped ONUG finding")
