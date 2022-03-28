@@ -6,10 +6,10 @@
     "eventTime" : "2021-08-28T16:37:59Z",
     "contentType" : "application/json",
     "data" : {
-      "compartmentId" : "ocid1.compartment.oc1..aaaaaaaaeqm7cycpkedmlqzmitgjy5ya5urtae6zoogb7epspwrqz2kxxwta",
-      "compartmentName" : "McMillan",
+      "compartmentId" : "ocid1.compartment.oc1..1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e",
+      "compartmentName" : "Comp-Name",
       "resourceName" : "Bucket is public",
-      "resourceId" : "ocid1.cloudguardproblem.oc1.iad.amaaaaaa24o7ld2qphw36wghvk44yms2u3hm4wnzhvtgcakktusurhtepevq",
+      "resourceId" : "ocid1.cloudguardproblem.oc1.iad.1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e",
       "additionalDetails" : {
         "tenantId" : "ocid1.tenancy.oc1..aaaaaaaagfqbe4ujb2dgwxtp37gzinrxt6h6hfshjokfgfi5nzquxmfpzkyq",
         "status" : "OPEN",
@@ -20,7 +20,7 @@
         "resourceName" : "AutoVinci",
         "resourceId" : "orasenatdpltsecitom01/AutoVinci",
         "resourceType" : "Bucket",
-        "targetId" : "ocid1.cloudguardtarget.oc1.iad.amaaaaaa24o7ldyaborosittsemtunkb2kkn54bysbznwa4xdu7rj3mpulza",
+        "targetId" : "ocid1.cloudguardtarget.oc1.iad.1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e",
         "labels" : "CIS_OCI_V1.1_OBJECTSTORAGE, ObjectStorage",
         "firstDetected" : "2021-08-28T16:37:36.945Z",
         "lastDetected" : "2021-08-28T16:37:36.945Z",
@@ -29,8 +29,8 @@
         "problemRecommendation" : "Ensure that the bucket is sanctioned for public access, and if not, direct the OCI administrator to restrict the bucket policy to allow only specific users access to the resources required to accomplish their job functions."
       }
     },
-    "eventID" : "1642b454-725e-412f-bfc9-783803f83134",
+    "eventID" : "1642b454-eeee-aaaa-aaa-783803f83134",
     "extensions" : {
-      "compartmentId" : "ocid1.compartment.oc1..aaaaaaaaeqm7cycpkedmlqzmitgjy5ya5urtae6zoogb7epspwrqz2kxxwta"
+      "compartmentId" : "ocid1.compartment.oc1..1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e"
     }
    }

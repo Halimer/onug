@@ -24,16 +24,22 @@ Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,resource.name,dat
 Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,resource.region,data.additionalDetails.region,,string
 Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,resource.zone,data.compartmentName,,string
 Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,event.recommendation,data.additionalDetails.problemRecommendation,,string
-Azure,CSP,2,Defender,Suspicious management session,provider.accountId,SubscriptionId,,string
-Azure,CSP,2,Defender,Suspicious management session,event.guid,AlertId,,string
-Azure,CSP,2,Defender,Suspicious management session,event.name,eventName,,string
-Azure,CSP,2,Defender,Suspicious management session,event.shortDescription,shortDescription,,string
-Azure,CSP,2,Defender,Suspicious management session,event.longDescription,longDescription,,string
-Azure,CSP,2,Defender,Suspicious management session,event.startTime,alertCreatedDateTime,,string
-Azure,CSP,2,Defender,Suspicious management session,event.severity,severity,,string
-Azure,CSP,2,Defender,Suspicious management session,event.status,status,,string
-Azure,CSP,2,Defender,Suspicious management session,resource.identifier,alertId,,string
-Azure,CSP,2,Defender,Suspicious management session,resource.type,principalType,,string
-Azure,CSP,2,Defender,Suspicious management session,resource.name,principalName,,string
-Azure,CSP,2,Defender,Suspicious management session,resource.region,identityAddress,,string
-Azure,CSP,2,Defender,Suspicious management session,resource.uri,principalUri,,string
+Azure,CSP,2,Defender,__default__,provider.accountId,properties.subscriptionId,,string
+Azure,CSP,2,Defender,__default__,event.guid,id,,string
+Azure,CSP,2,Defender,__default__,event.name,properties.alertName,,string
+Azure,CSP,2,Defender,__default__,event.shortDescription,properties.alertDisplayName,,string
+Azure,CSP,2,Defender,__default__,event.longDescription,properties.description,,string
+Azure,CSP,2,Defender,__default__,event.startTime,properties.detectedTimeUtc,,string
+Azure,CSP,2,Defender,__default__,event.severity,properties.description,,string
+Azure,CSP,2,Defender,__default__,event.status,properties.state,,string
+Azure,CSP,2,Defender,__default__,resource.identifier,properties.associatedResource,,string
+Azure,CSP,2,Defender,__default__,resource.type,properties.extendedProperties.resourceType,,string
+Aquasec,CSPM,3,Aqua,__default__,event.name,data.control,,string
+Aquasec,CSPM,5,Aqua,__default__,event.guid,id,,string
+Aquasec,CSPM,6,Aqua,__default__,event.shortDescription,data.reason,,string
+Aquasec,CSPM,7,Aqua,__default__,event.startTime,data.time,,string
+Aquasec,CSPM,8,Aqua,__default__,event.severity,,High,string
+Aquasec,CSPM,10,Aqua,__default__,resource.identifier,containerid,,string
+Aquasec,CSPM,11,Aqua,__default__,resource.type,type,,string
+Aquasec,CSPM,12,Aqua,__default__,resource.name,data.container,,string
+Aquasec,CSPM,13,Aqua,__default__,resource.region,data.vm_location,,string
