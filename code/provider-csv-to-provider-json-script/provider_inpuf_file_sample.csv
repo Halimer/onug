@@ -11,19 +11,8 @@ Oracle Cloud Infrastructure,CSP,1,Cloud Guard,__default__,resource.type,data.add
 Oracle Cloud Infrastructure,CSP,1,Cloud Guard,__default__,resource.name,data.additionalDetails.resourceName,,string
 Oracle Cloud Infrastructure,CSP,1,Cloud Guard,__default__,resource.region,data.additionalDetails.region,,string
 Oracle Cloud Infrastructure,CSP,1,Cloud Guard,__default__,resource.zone,data.compartmentName,,string
-Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,provider.accountId,data.additionalDetails.tenantId,,string
-Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,event.guid,data.resourceId,,string
-Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,event.name,,Public Bucket,string
-Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,event.shortDescription,data.additionalDetails.problemDescription,,string
-Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,event.startTime,data.additionalDetails.firstDetected,,datetime
-Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,event.severity,data.additionalDetails.riskLevel,,string
-Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,event.status,data.additionalDetails.status,,string
-Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,resource.identifier,data.additionalDetails.resourceId,,orclResourceId
-Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,resource.type,data.additionalDetails.resourceType,,string
-Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,resource.name,data.additionalDetails.resourceName,,string
-Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,resource.region,data.additionalDetails.region,,string
-Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,resource.zone,data.compartmentName,,string
 Oracle Cloud Infrastructure,CSP,1,Cloud Guard,BUCKET_IS_PUBLIC,event.recommendation,data.additionalDetails.problemRecommendation,,string
+Oracle Cloud Infrastructure,CSP,1,Cloud Guard,SUSPICIOUS_IP_ACTIVITY,event.geolocation.ipv4,data.additionalDetails.impactedResourceId,,
 Azure,CSP,2,Defender,__default__,provider.accountId,properties.subscriptionId,,string
 Azure,CSP,2,Defender,__default__,event.guid,id,,string
 Azure,CSP,2,Defender,__default__,event.name,properties.alertName,,string
