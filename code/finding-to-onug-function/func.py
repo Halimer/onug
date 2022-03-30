@@ -75,20 +75,22 @@ def handler(ctx, data: io.BytesIO = None):
 
     try:
         my_onug = onug(provider_json, message)
-        logging.debug("Handler: My onug object is: " + str(my_onug.get_finding()))
+        payload = my_onug.get_finding()
+        logging.debug("Handler: My onug object is: " + str(payload))
         if LOGGING_OCID:
             try:
+                LOGGER.info("Handler: writing ONUG finding to log OCID: " + str(LOGGING_OCID))
                 LOGGER.info("Handler: writing ONUG finding to log")
-                write_onug_to_log(signer, {},  my_onug.get_finding(),LOGGING_OCID)
+                write_onug_to_log(signer, {},  payload, LOGGING_OCID)
             except (Exception) as ex:
                 raise Exception("Handler: Failed to write event to log: " + str(ex))
             return response.Response(
-                ctx, response_data=json.dumps(my_onug.get_finding()), 
+                ctx, response_data=json.dumps(payload), 
                 headers={"Content-Type": "application/json"})
         else:
             LOGGER.info("Handler: returning mapped ONUG finding")
             return response.Response(
-                ctx, response_data=json.dumps(my_onug.get_finding()), 
+                ctx, response_data=json.dumps(payload), 
                 headers={"Content-Type": "application/json"})
     except (Exception) as ex:
         raise Exception("Handler: Event type not properly formatted." + str(ex))
