@@ -28,7 +28,7 @@ class onug:
 
     def __set_provider_from_raw_finding(self):
         
-        if "ocid" in str(self.__raw_finding) and ".compartment" in str(self.__raw_finding):
+        if "ocid" in str(self.__raw_finding) and "compartmentId" in str(self.__raw_finding):
             self.__provider = "Oracle Cloud Infrastructure"
         
         if "Microsoft.Security" in str(self.__raw_finding):
