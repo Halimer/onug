@@ -10,7 +10,7 @@ from oci.signer import Signer
 
 ## to be moved 
 LOGGER = logging.getLogger()
-LOGGER.setLevel(level=logging.DEBUG)
+LOGGER.setLevel(level=logging.ERROR)
 LOGGER.info("Inside Event Logging Function")
 
 # while open
@@ -21,7 +21,7 @@ LOGGER.info("Inside Event Logging Function")
 
 # while open
 #file = '../../sample_data/oci_cg_public_bucket.json'
-file = '../../sample_data/oci_cg_vss.json'
+file = '../../sample_data/oci_cg_SUSPICIOUS_IP_ACTIVITY.json'
 oci_cg_finding = open(file)
 
 
@@ -37,13 +37,23 @@ aqua_sec_finding.close()
 
 # print(aqua_sec_finding)
 
-msft_sec_file = '../../sample_data/defender_2.json'
-msft_sec_finding = open(msft_sec_file)
+# msft_sec_file = '../../sample_data/defender_2.json'
+# msft_sec_finding = open(msft_sec_file)
 
-msft_sec_finding_json = json.loads(msft_sec_finding.read())
-msft_sec_finding.close()
+# msft_sec_finding_json = json.loads(msft_sec_finding.read())
+# msft_sec_finding.close()
 
-config = oci.config.from_file("~/.oci/config","CGDemo")
+aws_gd_file = '../../sample_data/aws_gd_test.json'
+aws_gd_finding = open(aws_gd_file)
+aws_gd_finding_json = json.loads(aws_gd_finding.read())
+aws_gd_finding.close()
+print("#" * 30)
+print(aws_gd_finding_json)
+print("#" * 30)
+
+# config = oci.config.from_file("~/.oci/config","CGDemo")
+config = oci.config.from_file("~/.oci/config","Oracle")
+
 print(config)
 auth = Signer(
     tenancy=config['tenancy'],
@@ -53,20 +63,22 @@ auth = Signer(
     pass_phrase=config['pass_phrase']
     )
 
-url = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom01/b/HammerPublic/o/file.json'
+url = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom01/b/HammerPublic/o/output_file.json'
 #url = 'https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom01/b/HammerPublic/o/aqua.json'
+my_onug = onug(url,aws_gd_finding_json)
 # my_onug = onug(url,oci_cg_finding_json)
-# print(my_onug.get_finding())
-log_ocid = 'ocid1.log.oc1.iad.amaaaaaatr7ig7aaox3ie3bz2vcbbuboayl544wkcvuxdz32mzpqi5qbrduq'
-# print(type(oci_cg_finding_json))
-# print(type(my_onug.get_finding()))
-my_aqua_sec = onug(url, aqua_sec_finding_json,"Aquasec")
-print(my_aqua_sec.get_finding())
+
+print(my_onug.get_finding())
+# log_ocid = 'ocid1.log.oc1.iad.amaaaaaatr7ig7aaox3ie3bz2vcbbuboayl544wkcvuxdz32mzpqi5qbrduq' # CGDemo
+log_ocid = 'ocid1.log.oc1.iad.amaaaaaa24o7ldyaetp2uvhrraubii3vsoxg7obopzs5bph2jokouof34vta' # Security
+
 
 # my_msft = onug(url, msft_sec_finding_json)
 # print(my_msft.get_finding())
 
 
 # payload = my_msft.get_finding()
-#write_onug_to_log(auth,config, payload,log_ocid)
+# payload = my_aqua_sec.get_finding()
+payload = my_onug.get_finding()
+write_onug_to_log(auth,config,payload,log_ocid)
 #write_event_to_log(auth,config, oci_cg_finding_json,log_ocid)

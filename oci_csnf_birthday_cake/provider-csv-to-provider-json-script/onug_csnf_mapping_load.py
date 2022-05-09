@@ -1,4 +1,6 @@
-#!/opt/homebrew/bin/python3
+# Copyright (c) 2021 Oracle and/or its affiliates.
+# Licensed under the Universal Permissive License v 1.0 as shown at https://oss.oracle.com/licenses/upl.
+
 import sys
 import argparse
 import csv
@@ -136,13 +138,12 @@ def execute_conversion():
         help="JSON Output prefix")
 	result = parser.parse_args()
 	
-	print(len(sys.argv))
 	if len(sys.argv) != 5 :
 		parser.print_help()
 		return None
 
-	print(result.input_csv.name)
-
+	print(f'Input file is: {result.input_csv.name}')
+	print(f'Output file is: {result.output_json.name}')
 	convert_onug_csv_to_json(result.input_csv.name, result.output_json.name)
 
 

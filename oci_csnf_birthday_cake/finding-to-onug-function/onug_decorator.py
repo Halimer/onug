@@ -13,13 +13,11 @@ class onug:
     def __init__(self,url,raw_finding, provider=None):
         self.__raw_finding = raw_finding
         self.__url = url
-        print("**" * 30)
-        print(provider)
         if provider:
             self.__provider = provider
         else: 
             self.__set_provider_from_raw_finding()
-        
+        logging.debug("__init___: provider is set to: " +  str(self.__provider))
         self.__get_onug_mapping_for_provider()
         self.__set_finding_provider_data()
         self.__set_data_source_mapping_from_provider()
@@ -33,7 +31,10 @@ class onug:
         
         if "Microsoft.Security" in str(self.__raw_finding):
             self.__provider = "Azure"
-        
+
+        if "arn:aws:" in str(self.__raw_finding):
+            self.__provider = "Amazon Web Services"       
+
         logging.debug("__set_provider_from_raw_finding: Provider is: " + self.__provider)
 
     def __set_finding_provider_data(self):
@@ -68,7 +69,6 @@ class onug:
                 self.__source_mapping = self.__provider_mapping["source"][self.__source]["alerts"]["__default__"]["alertMapping"]
                 logging.debug("__set_data_source_mapping_from_provider: Default Alerting Set: " + str(self.__source_mapping))
 
-
                 for alert_name in self.__provider_mapping["source"][self.__source]["alerts"]:
                     logging.debug("__set_data_source_mapping_from_provider: Alert Name is: " + alert_name)
                     if alert_name ==  self.__raw_finding["data"]["additionalDetails"]["problemName"]:
@@ -76,6 +76,7 @@ class onug:
                         for mapping in self.__provider_mapping["source"][self.__source]["alerts"][alert_name]["alertMapping"]:
                             logging.debug("__set_data_source_mapping_from_provider: Adding alert mapping: " + mapping)
                             self.__source_mapping[mapping] = self.__provider_mapping["source"][self.__source]["alerts"][alert_name]["alertMapping"][mapping]
+
         if self.__provider == "Azure":
             self.__source = "Defender"
             logging.debug(" __set_data_source_mapping_from_provider: source is: " + self.__source)
@@ -97,17 +98,31 @@ class onug:
 
             self.__source_mapping = self.__provider_mapping["source"][self.__source]["alerts"]["__default__"]["alertMapping"]
             logging.debug("__set_data_source_mapping_from_provider: Default Alerting Set: " + str(self.__source_mapping))
+         
+        if self.__provider == "Amazon Web Services":
+            if "arn:aws:guardduty" in str(self.__raw_finding):
+                self.__source = "GuardDuty"
+                logging.debug(" __set_data_source_mapping_from_provider: source is: " + self.__source)
+                logging.debug("__set_data_source_mapping_from_provider: Source Name is: " + self.__provider_mapping["source"][self.__source]["sourceName"])
+                self.__finding["source"]["sourceName"] = self.__provider_mapping["source"][self.__source]["sourceName"]
+                logging.debug("__set_data_source_mapping_from_provider: Source id is: " + self.__provider_mapping["source"][self.__source]["sourceId"])
+                self.__finding["source"]["sourceId"] = self.__provider_mapping["source"][self.__source]["sourceId"]
+
+                self.__source_mapping = self.__provider_mapping["source"][self.__source]["alerts"]["__default__"]["alertMapping"]
+                logging.debug("__set_data_source_mapping_from_provider: Default Alerting Set: " + str(self.__source_mapping))       
+                print("ss"*30)
+                print(str(self.__source_mapping))
 
     def __mapped_item_from_path(self, path, finding):
-        logging.debug("get_mapped_item_from_path: path is: " + str(path))
-        try:
-            tuple_path = tuple(path.split("."))
-            for key in tuple_path:
-                finding = finding[key]
-            logging.debug("get_mapped_item_from_path: mapped_item is: " + str(finding))
-            return finding
-        except:
-            return "No mapped value"
+            logging.debug("get_mapped_item_from_path: path is: " + str(path))
+            try:
+                tuple_path = tuple(path.split("."))
+                for key in tuple_path:
+                    finding = finding[key]
+                logging.debug("get_mapped_item_from_path: mapped_item is: " + str(finding))
+                return finding
+            except:
+                return "No mapped value"
 
     def __set_item_from_path(self, path, item):
         # Cheating
@@ -119,6 +134,13 @@ class onug:
 
     def __map_raw_finding_to_onug(self):
         logging.debug("__map_raw_finding_to_onug: source mapping is: " )
+        print("+"* 30)
+        print(self.__raw_finding)
+        print("00"* 30)
+
+        print(self.__source_mapping)
+        print("+"* 30)
+
         for element in self.__source_mapping:
             logging.debug("__map_raw_finding_to_onug: Mapped Value: " + str(type(self.__source_mapping[element]["mappedValue"])))
             if not(self.__source_mapping[element]["mappedValue"]):

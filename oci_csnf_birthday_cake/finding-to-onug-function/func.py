@@ -76,6 +76,7 @@ def handler(ctx, data: io.BytesIO = None):
     try:
         my_onug = onug(provider_json, message)
         payload = my_onug.get_finding()
+        del my_onug
         logging.debug("Handler: My onug object is: " + str(payload))
         if LOGGING_OCID:
             try:
@@ -87,6 +88,7 @@ def handler(ctx, data: io.BytesIO = None):
             return response.Response(
                 ctx, response_data=json.dumps(payload), 
                 headers={"Content-Type": "application/json"})
+                
         else:
             LOGGER.info("Handler: returning mapped ONUG finding")
             return response.Response(
