@@ -8,7 +8,7 @@
     1. [How to Execute](#script_how_to)
     1. [Sample JSON Output](#sample_json)
 1. [OCI Birthday Cake Demo Deployment Guide](#oci_functions)
-    1. [Architectures](#oci_arch)
+    1. [Architecture](#oci_arch)
 
 
 ## <a name="overview"></a>Overview
