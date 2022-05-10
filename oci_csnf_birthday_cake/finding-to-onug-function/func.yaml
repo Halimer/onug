@@ -1,5 +1,5 @@
 schema_version: 20180708
-name: finding-to-onug
+name: finding-to-onug-csnf
 version: 0.0.0
 runtime: python
 build_image: fnproject/python:3.8-dev
@@ -8,3 +8,5 @@ entrypoint: /python/bin/fdk /function/func.py handler
 memory: 256
 config:
   LOG_LEVEL: warning
+  LOGGING_OCID: 
+  PROVIDER_JSON_URL: https://objectstorage.us-ashburn-1.oraclecloud.com/n/orasenatdpltsecitom01/b/HammerPublic/o/oci_output.json
