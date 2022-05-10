@@ -138,3 +138,6 @@ dmypy.json
 
 # Ignore Word Docx
 .docx
+
+# Ignore test.py
+**test.py**
