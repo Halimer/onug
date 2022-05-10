@@ -15,7 +15,7 @@
         "status" : "OPEN",
         "reason" : "Existing Problem updated by CloudGuard",
         "problemName" : "SCANNED_HOST_VULNERABILITY",
-        "riskLevel" : "CRITICAL",
+        "riskLevel" : "High",
         "problemType" : "CONFIG_CHANGE",
         "resourceName" : "aDocker",
         "resourceId" : "ocid1.instance.oc1.iad.1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e1q2w3e",

@@ -6,7 +6,7 @@
     "vendorName": "Microsoft",
     "alertDisplayName": "[SAMPLE ALERT] Unusual amount of data extracted from a storage account",
     "alertName": "SIMULATED_Storage.Blob_DataExfiltration.AmountOfDataAnomaly",
-    "detectedTimeUtc": "2022-03-28T18:26:07.7031757Z",
+    "detectedTimeUtc": "2022-04-04T18:26:07.7031757Z",
     "description": "THIS IS A SAMPLE ALERT: Someone has extracted an unusual amount of data from your Azure Storage account 'Sample-Storage'.",
     "remediationSteps": "• Limit access to your storage account, following the 'least privilege' principle: https://go.microsoft.com/fwlink/?linkid=2075737.\r\n• Revoke all storage access tokens that may be compromised and ensure that your access tokens are only shared with authorized users.\r\n• Ensure that storage access tokens are stored in a secured location such as Azure Key Vault. Avoid storing or sharing storage access tokens in source code, documentation, and email.",
     "actionTaken": "Undefined",
@@ -33,7 +33,7 @@
       "killChainIntent": "Exfiltration"
     },
     "state": "Active",
-    "reportedTimeUtc": "2022-03-28T18:26:47.1036441Z",
+    "reportedTimeUtc": "2022-04-04T18:26:47.1036441Z",
     "workspaceArmId": "/subscriptions/97e01fd4-3326-41f4-b9e3-3cfd6809e10f/resourcegroups/csnf/providers/microsoft.operationalinsights/workspaces/csnfsentinel",
     "confidenceReasons": [],
     "canBeInvestigated": true,
