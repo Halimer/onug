@@ -36,7 +36,7 @@ def get_function_config(ctx):
     # Getting LOG_LEVEL from function config
     global provider_json
     try:
-        provider_json = getattr(logging,config["PROVIDER_JSON_URL"].upper(),None)
+        provider_json = config["PROVIDER_JSON_URL"]
         LOGGER.info("get_function_config: Provider JSON URL is set to: " + config["PROVIDER_JSON_URL"])
 
     except KeyError:
