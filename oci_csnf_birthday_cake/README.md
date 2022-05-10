@@ -445,7 +445,7 @@ This section will walk you through how to deploy the OCI ONUG CSNF Birthday Cake
 
 ### <a name="oci_arch"></a>Architecture Diagram
 
-![](OCI_BDAY_Architecture.png)
+![](OCI_BDAY_Architecture.svg)
 
 ### Prerequisites
 
